@@ -1,0 +1,109 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State",
+    "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "State"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana",
+      "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+      "labels" : {
+        "IRI-based" : "Haryana"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar",
+      "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+      "labels" : {
+        "IRI-based" : "Bihar"
+      }
+    } ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital",
+    "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Capital"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna",
+      "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+      "labels" : {
+        "IRI-based" : "Patna"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh",
+      "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+      "labels" : {
+        "IRI-based" : "Chandigarh"
+      }
+    } ],
+    "id" : "2"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "4",
+    "type" : "owl:someValuesFrom"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital",
+    "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "Has_Capital"
+    },
+    "domain" : "0",
+    "attributes" : [ "object" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital",
+    "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "Has_Capital"
+    },
+    "domain" : "0",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population",
+    "baseIri" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "has_Population"
+    },
+    "domain" : "0",
+    "attributes" : [ "someValues", "datatype" ],
+    "id" : "4"
+  } ]
+}

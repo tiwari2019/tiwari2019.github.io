@@ -1,0 +1,79 @@
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital> .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population> .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population> "90000000"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital> .
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh> .
+# 
+# http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital> .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

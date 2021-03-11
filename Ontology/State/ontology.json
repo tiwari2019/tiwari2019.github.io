@@ -1,0 +1,67 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State" ],
+  "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna"
+  } ],
+  "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "90000000"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital" ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State" ],
+  "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital" ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1"
+  }, {
+    "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+} ]

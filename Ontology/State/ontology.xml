@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#"
+     xml:base="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-387="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"/>
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Has_Capital"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#has_Population"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Bihar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State"/>
+        <Has_Capital rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna"/>
+        <has_Population rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90000000</has_Population>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Haryana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#State"/>
+        <Has_Capital rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Chandigarh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Patna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/projectlab/ontologies/2018/6/untitled-ontology-387#Capital"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+
