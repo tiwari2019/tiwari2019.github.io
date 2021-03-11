@@ -1,0 +1,1326 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/def/sanjutiwari#"
+     xml:base="https://w3id.org/def/sanjutiwari"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/def/sanjutiwari">
+        <dc:contributor>Prof. Dr. Ajith Abraham</dc:contributor>
+        <dc:creator>Dr. Sanju Tiwari</dc:creator>
+        <dc:description>It is a smart semantic model to store the health care descriptions with their entities, properties and attributes. Knowledge can be infer by SWRL rules and SPARQL Queries.</dc:description>
+        <dc:title>Smart Health Care Ontology for Health Care</dc:title>
+        <terms:created>04/12/2018</terms:created>
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#cared_by -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#cared_by">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/SmartHealthCare#cares_for"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Nurse"/>
+        <rdfs:comment>Property for Patient</rdfs:comment>
+        <rdfs:isDefinedBy>It is an object proprty.</rdfs:isDefinedBy>
+        <rdfs:label>cared_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#cares_for -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#cares_for">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Nurse"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:comment>A property for Doctors</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>cares_for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#has -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#has">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/sanjutiwari#found_in"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>Property to contain.</rdfs:comment>
+        <rdfs:isDefinedBy>An Objectproperty.</rdfs:isDefinedBy>
+        <rdfs:label>has</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#looks_for -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#looks_for">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/SmartHealthCare#treated_by"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/sanjutiwari#Doctor"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:comment>Propert to look patients</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>looks_for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#operates -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#operates">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/SmartHealthCare#operates_by"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Surgeon"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:comment>Property for operator.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>operates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#operates_by -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#operates_by">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Surgeon"/>
+        <rdfs:comment>Property to operate by doctor.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>operates_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#transfer_data_to -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#transfer_data_to">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/sanjutiwari#recieved_data"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>Property to transfer data.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>transfer_data_to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#treated_by -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/SmartHealthCare#treated_by">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/sanjutiwari#Doctor"/>
+        <rdfs:comment>Property for treatment.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>treated_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#found_in -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/sanjutiwari#found_in">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:comment>An Object Property for diagnosing the symptoms.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property</rdfs:isDefinedBy>
+        <rdfs:label>found_in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#has_manage -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/sanjutiwari#has_manage">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/sanjutiwari#managed_by"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:comment>An object property to manage organisation.</rdfs:comment>
+        <rdfs:isDefinedBy>An object property</rdfs:isDefinedBy>
+        <rdfs:label>has_manage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#has_measured -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/sanjutiwari#has_measured">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/sanjutiwari#measured_by"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Sensores"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/sanjutiwari#Diseases"/>
+        <rdfs:comment>An object property to measure the diseases by sensor.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property</rdfs:isDefinedBy>
+        <rdfs:label>has_measured</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#managed_by -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/sanjutiwari#managed_by">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Organization"/>
+        <rdfs:comment>An object property to manage the Healthcare</rdfs:comment>
+        <rdfs:isDefinedBy>An object property.</rdfs:isDefinedBy>
+        <rdfs:label>managed_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#measured_by -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/sanjutiwari#measured_by">
+        <rdfs:domain rdf:resource="https://w3id.org/def/sanjutiwari#Diseases"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#Sensores"/>
+        <rdfs:comment>Property to measure.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property.</rdfs:isDefinedBy>
+        <rdfs:label>measured_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#recieved_data -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/sanjutiwari#recieved_data">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:comment>A Property to receive the data from HealthDevices.</rdfs:comment>
+        <rdfs:isDefinedBy>An Object Property for data receiving.</rdfs:isDefinedBy>
+        <rdfs:label>received_data</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#doTest -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/sanjutiwari#doTest">
+        <rdfs:domain rdf:resource="https://w3id.org/def/sanjutiwari#Diseases"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>TB</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>corona</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>dengue</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>malaria</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>sugar</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#hasAddress -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/sanjutiwari#hasAddress">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasAddress</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#hasManufacture -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/sanjutiwari#hasManufacture">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label>hasManufacture</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#hasModel -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/sanjutiwari#hasModel">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label>hasModel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/sanjutiwari#hasName">
+        <rdfs:domain rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#hasSymptoms -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/sanjutiwari#hasSymptoms">
+        <rdfs:domain rdf:resource="https://w3id.org/def/sanjutiwari#Diseases"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>cough</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>fever</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>loos motions</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>vomiting</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:isDefinedBy>Health Care Ontology</rdfs:isDefinedBy>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Actor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Actor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:comment>Actor can perform a concrete intervention or problem assessment such as Doctor, Manager, Nurse, Patient, Surgeon etc,</rdfs:comment>
+        <rdfs:isDefinedBy>Actor is  subclass of health care.</rdfs:isDefinedBy>
+        <rdfs:label>Actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Actuators -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Actuators">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:comment>An actuator is a device that converts energy into motion or applies force. The mechanical device takes energy in the form of hydraulics, pneumatics, or from a motor, and converts it into motion.</rdfs:comment>
+        <rdfs:isDefinedBy>Actuators is a sub-class of healthDevices</rdfs:isDefinedBy>
+        <rdfs:label>Actuators</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Administrator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Administrator">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>Administrators are responsible for the day-to-day operation of a hospital.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a Subclass of Actor</rdfs:isDefinedBy>
+        <rdfs:label>Administrator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#BPSensores -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#BPSensores">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sensores"/>
+        <rdfs:comment>Sensing and Storing the Blood Pressure Measure by Patients through A Platform and Mobile Devices Sensors</rdfs:comment>
+        <rdfs:isDefinedBy>BPSensores is a sub-class of Sensores</rdfs:isDefinedBy>
+        <rdfs:label>BPSensores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Body_Temp -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Body_Temp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>Temperature of the body; normally 98.6 F or 37 C in humans; usually measured to obtain a quick evaluation of a person&apos;s health</rdfs:comment>
+        <rdfs:isDefinedBy>Body_Temp is a sub-class of Symptoms.</rdfs:isDefinedBy>
+        <rdfs:label>Body_Temp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Cardiologist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Cardiologist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Physician"/>
+        <rdfs:comment>A cardiologist is a medical doctor who is trained and certified to help patients who have problems with their heart, blood vessels or other things connected to the cardiovascular system.</rdfs:comment>
+        <rdfs:isDefinedBy>Cardiologist is a sub-class of Physician</rdfs:isDefinedBy>
+        <rdfs:label>Cardiologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#ChestPain -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#ChestPain">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>Pain in the chest that can be a result of many things, including angina, heart attack (coronary occlusion), and other important diseases. Chest pain is a warning to seek medical attention, so one should try not to ignore chest pain and &apos;work through it.</rdfs:comment>
+        <rdfs:isDefinedBy>ChestPain is a sub-class of Symptoms.</rdfs:isDefinedBy>
+        <rdfs:label>ChestPain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#ClinicalPharmacist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Pharmacist"/>
+        <rdfs:comment>Clinical pharmacists work directly with physicians, other health professionals, and patients to ensure that the medications prescribed for patients contribute to the best possible health outcomes.</rdfs:comment>
+        <rdfs:isDefinedBy>ClinicalPharmacist is a sub-class of Pharmacist</rdfs:isDefinedBy>
+        <rdfs:label>ClinicalPharmacist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#CommunityPharmacist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#CommunityPharmacist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Pharmacist"/>
+        <rdfs:comment>Community pharmacists are the health professionals most accessible to the public. They supply medicines in accordance with a prescription or, when legally permitted, sell them without a prescription.</rdfs:comment>
+        <rdfs:isDefinedBy>CommunityPharmacist is a sub-cñass of Pharmacist.</rdfs:isDefinedBy>
+        <rdfs:label>CommunityPharmacist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Consultation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Consultation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Event"/>
+        <rdfs:comment>Consultation is the act of seeking assistance from another physician(s) or health care professional(s) for diagnostic studies, therapeutic interventions, or other services that may benefit the patient.</rdfs:comment>
+        <rdfs:isDefinedBy>Consultation is a sub-class of Event.</rdfs:isDefinedBy>
+        <rdfs:label>Consultation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Cough -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Cough">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>A rapid expulsion of air from the lungs, typically in order to clear the lung airways of fluids, mucus, or other material. Also known as tussis</rdfs:comment>
+        <rdfs:isDefinedBy>Cough is a sub-class of Sympoms.</rdfs:isDefinedBy>
+        <rdfs:label>Cough</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Diagnosis -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Diagnosis">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Event"/>
+        <rdfs:comment>Medical diagnosis is the process of determining which disease or condition explains a person&apos;s symptoms and signs.</rdfs:comment>
+        <rdfs:isDefinedBy>Diagnosis is sub-class of Event.</rdfs:isDefinedBy>
+        <rdfs:label>Diagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#DoctorsPrescription -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#DoctorsPrescription">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Record"/>
+        <rdfs:comment>It is prescription suggested to patient.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a subclass of Record</rdfs:isDefinedBy>
+        <rdfs:label>DoctorsPrescription</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Event -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Event">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:comment>Event is a consequence of  care that results several kind of physical states.</rdfs:comment>
+        <rdfs:isDefinedBy>Event is a subclass of Health care.</rdfs:isDefinedBy>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Fever -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Fever">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>Although a fever technically is any body temperature above the normal of 98.6 F (37 C), in practice a person is usually not considered to have a significant fever until the temperature is above 100.4 F (38 C)</rdfs:comment>
+        <rdfs:isDefinedBy>Fever is a sub-class of Symptoms.</rdfs:isDefinedBy>
+        <rdfs:label>Fever</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#GeneralPractice -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#GeneralPractice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Organization"/>
+        <rdfs:comment>General practice (GP) General practitioners (GPs) treat all common medical conditions and refer patients to hospitals and other medical services for urgent and specialist treatment.</rdfs:comment>
+        <rdfs:isDefinedBy>Organization is a sub-class of HealthCare</rdfs:isDefinedBy>
+        <rdfs:label>GeneralPractice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Headache -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Headache">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>Headache is pain in any region of the head. Headaches may occur on one or both sides of the head, be isolated to a certain location, radiate across the head from one point, or have a viselike quality.</rdfs:comment>
+        <rdfs:isDefinedBy>Headache is a sub-class of symptoms.</rdfs:isDefinedBy>
+        <rdfs:label>Headache</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#HealthCare -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#HealthCare">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:comment>A class for health care objects.</rdfs:comment>
+        <rdfs:isDefinedBy>HealthCare is a main class to keep Health Information.</rdfs:isDefinedBy>
+        <rdfs:label>HealthCare</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#HealthDevices -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#HealthDevices">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A medical device is any device intended to be used for medical purposes. ... Medical devices benefit patients by helping health care providers diagnose and treat patients and helping patients overcome sickness or disease, improving their quality of life.</rdfs:comment>
+        <rdfs:isDefinedBy>HealthDevices is a sub-class</rdfs:isDefinedBy>
+        <rdfs:label>HealthDevices</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#HealthProvider -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#HealthProvider">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>Person or business that provides health care services to consumers. Most health care providers are part of a network of some sort whether it is a HMO or PPO.</rdfs:comment>
+        <rdfs:label>HealthProvider</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#HeartBeat -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#HeartBeat">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sympotoms"/>
+        <rdfs:comment>Heart rate is the speed of the heartbeat measured by the number of contractions (beats) of the heart per minute (bpm). The heart rate can vary according to the body&apos;s physical needs, including the need to absorb oxygen and excrete carbon dioxide. ...</rdfs:comment>
+        <rdfs:isDefinedBy>HeartBeat is a sub-class of Symptoms.</rdfs:isDefinedBy>
+        <rdfs:label>HeartBeat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#HeartbeatSensors -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#HeartbeatSensors">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sensores"/>
+        <rdfs:comment>A heart rate monitor (HRM) is a personal monitoring device that allows one to measure/display ... Medical heart rate monitoring used in hospitals is usually wired and usually multiple sensors are used.</rdfs:comment>
+        <rdfs:isDefinedBy>HeartbeatSensors is a sub-class of Sensores.</rdfs:isDefinedBy>
+        <rdfs:label>HeartbeatSensors</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Hospital -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Hospital">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Organization"/>
+        <rdfs:comment>A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</rdfs:comment>
+        <rdfs:isDefinedBy>Hospital is a sub-class of HealthCare</rdfs:isDefinedBy>
+        <rdfs:label>Hospital</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Insurance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Insurance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Organization"/>
+        <rdfs:comment>Health insurance is a type of insurance coverage that pays for medical and surgical expenses incurred by the insured.</rdfs:comment>
+        <rdfs:isDefinedBy>Insurance is a sub-class of Organization</rdfs:isDefinedBy>
+        <rdfs:label>Insurance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#InsurancePolicy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#InsurancePolicy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Record"/>
+        <rdfs:comment>An insurance policy for patients.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a subclass of Record</rdfs:isDefinedBy>
+        <rdfs:label>InsurancePolicy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Manager -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Manager">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>To manage the things.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a Subclass of Actor</rdfs:isDefinedBy>
+        <rdfs:label>Manager</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#MedicalRecord -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#MedicalRecord">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Record"/>
+        <rdfs:comment>A record of Patient and Staff</rdfs:comment>
+        <rdfs:isDefinedBy>It is a subclass of Record</rdfs:isDefinedBy>
+        <rdfs:label>MedicalRecord</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Medical_Oncologist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Medical_Oncologist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Oncologist"/>
+        <rdfs:comment>A medical oncologist often is the main health care provider for someone who has cancer.</rdfs:comment>
+        <rdfs:isDefinedBy>Medical_Oncologist is a sub-class of Oncologist</rdfs:isDefinedBy>
+        <rdfs:label>Medical_Oncologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Nurse -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Nurse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>Nurse is for caring the people.</rdfs:comment>
+        <rdfs:isDefinedBy>Subclass of Actor</rdfs:isDefinedBy>
+        <rdfs:label>Nurse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Oncologist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Oncologist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Physician"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/sanjutiwari#Doctor"/>
+        <rdfs:comment>A doctor who has special training in diagnosing and treating cancer in adults using chemotherapy, hormonal therapy, biological therapy, and targeted therapy.</rdfs:comment>
+        <rdfs:isDefinedBy>Oncologist is a sub-class of Physician.</rdfs:isDefinedBy>
+        <rdfs:label>Oncologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"/>
+        <rdfs:comment>Oncology pharmacists ensure safety in compounding, preparing, and dispensing chemotherapy. ... Because of their expert knowledge of medications, pharmacists play an important role in educating patients, caregivers, and other health care professionals.</rdfs:comment>
+        <rdfs:isDefinedBy>Oncology_Pharamacist is a sub-class of ClinicalPharmacist</rdfs:isDefinedBy>
+        <rdfs:label>Oncology_Pharmacist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Organization -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Organization">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:comment>A health system, also sometimes referred to as health care system or healthcare organization, is the organization of people, institutions, and resources that deliver health care services to meet the health needs of target populations.</rdfs:comment>
+        <rdfs:isDefinedBy>Organization is a subclass of health care.</rdfs:isDefinedBy>
+        <rdfs:label>Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Patient -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Patient">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>A person who needs treatment.</rdfs:comment>
+        <rdfs:isDefinedBy>Patient is a subclass of Actor.</rdfs:isDefinedBy>
+        <rdfs:label>Patient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Pharmacist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Pharmacist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthProvider"/>
+        <rdfs:comment>The pharmacist verifies the legality, safety and appropriateness of the prescription order, checks the patient medication record before dispensing the prescription, ensures that the quantities of medication are dispensed accurately, and decides whether the medication should be handed to the patient, with appropriate counselling.</rdfs:comment>
+        <rdfs:isDefinedBy>Pharmacist is a sub-class of HealthProvider.</rdfs:isDefinedBy>
+        <rdfs:label>Pharmacist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"/>
+        <rdfs:comment>Psychiatric pharmacist are the specialist of clinical pharmacy for the treatment of people with psychiatric illnesses through the use of psychotropic medications.</rdfs:comment>
+        <rdfs:isDefinedBy>Phychiatric_Pharmacist is a sub-class of Pharmacist</rdfs:isDefinedBy>
+        <rdfs:label>Phychiatric_Pharmacist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Physician -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Physician">
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/sanjutiwari#Doctor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthProvider"/>
+        <rdfs:comment>A physician, medical practitioner, medical doctor, or simply doctor, is a professional who practises medicine, which is concerned with promoting, maintaining, or restoring health through the study, diagnosis, prognosis and treatment of disease, injury, and other physical and mental impairments.</rdfs:comment>
+        <rdfs:isDefinedBy>Physician is  a sub-class of HealthProvider.</rdfs:isDefinedBy>
+        <rdfs:label>Physician</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Pulmonologist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Pulmonologist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Physician"/>
+        <rdfs:comment>Pulmonologists treat breathing disorders, and may also specialize in some treatment of sleep disorders, severe allergies, and other lung conditions and diseases.</rdfs:comment>
+        <rdfs:isDefinedBy>Pulmonologist is a sub-class of Physician</rdfs:isDefinedBy>
+        <rdfs:label>Pulmonologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#RFID -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#RFID">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:comment>RFID is present in many forms – from tracking of surgical tools to tracking patients and staff.</rdfs:comment>
+        <rdfs:isDefinedBy>RFID is a sub-class of HealthDevices.</rdfs:isDefinedBy>
+        <rdfs:label>RFID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Radiation_Oncologist -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Radiation_Oncologist">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Oncologist"/>
+        <rdfs:comment>Radiation oncologists are health care professionals who treat cancers and tumors through radiation therapy. Radiation oncologists must be able to handle difficult emotional situations involving cancer patients and their families.</rdfs:comment>
+        <rdfs:isDefinedBy>Radiation_Oncologist is a subclass of Oncologist.</rdfs:isDefinedBy>
+        <rdfs:label>Radiation_Oncologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Record -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Record">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:comment>A record of a patient&apos;s medical information (as medical history, care or treatments received, test results, diagnoses, and medications taken)</rdfs:comment>
+        <rdfs:isDefinedBy>Record is a sub-class of HealthCare.</rdfs:isDefinedBy>
+        <rdfs:label>Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Referral -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Referral">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Event"/>
+        <rdfs:comment>A written order from your primary care doctor for you to see a specialist or get certain medical services.</rdfs:comment>
+        <rdfs:isDefinedBy>Referral is a sub-class of Event.</rdfs:isDefinedBy>
+        <rdfs:label>Referral</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Sensores -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Sensores">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthDevices"/>
+        <rdfs:comment>Sensors are devices that detect physical, chemical, and biological signals and provide a way for those signals to be measured and recorded.</rdfs:comment>
+        <rdfs:isDefinedBy>Sensores is a sub-class of HealthDevices</rdfs:isDefinedBy>
+        <rdfs:label>Sensores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Surgeon -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Surgeon">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>A person to do surgery of patients.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a Subclass of Actor</rdfs:isDefinedBy>
+        <rdfs:label>Surgeon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Surgery -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Surgery">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Event"/>
+        <rdfs:comment>The branch of medicine that employs operations in the treatment of disease or injury. Surgery can involve cutting, abrading, suturing, or otherwise physically changing body tissues and organs.</rdfs:comment>
+        <rdfs:isDefinedBy>Surgery is a sub-class of Event</rdfs:isDefinedBy>
+        <rdfs:label>Surgery</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Sympotoms -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Sympotoms">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Event"/>
+        <rdfs:comment>A symptom is a departure from normal function or feeling which is apparent to a patient, reflecting the presence of an unusual state, or of a disease. A symptom can be subjective or objective.</rdfs:comment>
+        <rdfs:isDefinedBy>Symptoms is a sub-class of Event.</rdfs:isDefinedBy>
+        <rdfs:label>Symptoms</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#TemperatureSensors -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#TemperatureSensors">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Sensores"/>
+        <rdfs:comment>One used to determine the temperature of the patient in clinical situations. a clinical thermometer using a sensor based on thermistors, solid-state electronic devices whose electrical characteristics change with temperature.</rdfs:comment>
+        <rdfs:label>Temperature Sensors</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/SmartHealthCare#Treatment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/SmartHealthCare#Treatment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Event"/>
+        <rdfs:comment>Medical treatment means the management and care of a patient to combat disease or disorder.</rdfs:comment>
+        <rdfs:isDefinedBy>Treatment is a sub-class of Event.</rdfs:isDefinedBy>
+        <rdfs:label>Treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#BloodPressure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#BloodPressure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/sanjutiwari#Diseases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/sanjutiwari#measured_by"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/def/SmartHealthCare#BPSensores"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>It is a disease.</rdfs:comment>
+        <rdfs:isDefinedBy>BloodPressure is a subclass of Disease.</rdfs:isDefinedBy>
+        <rdfs:label>BloodPressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Diseases -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#Diseases">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#HealthCare"/>
+        <rdfs:comment>It is a cause who makes person abnormal.</rdfs:comment>
+        <rdfs:isDefinedBy>Disease is a subclassof  Healthcare.</rdfs:isDefinedBy>
+        <rdfs:label>Diseases</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Doctor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#Doctor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Actor"/>
+        <rdfs:comment>A person for the treatment of Patients.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a Subclass of Actor</rdfs:isDefinedBy>
+        <rdfs:label>Doctor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#HeartDisease -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#HeartDisease">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/sanjutiwari#Diseases"/>
+        <rdfs:comment>It is a disease.</rdfs:comment>
+        <rdfs:isDefinedBy>HeartDisease is a subclass of Disease.</rdfs:isDefinedBy>
+        <rdfs:label>HeartDisease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#HeartPatient -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#HeartPatient">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/SmartHealthCare#treated_by"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/def/SmartHealthCare#Cardiologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A patient suffering from heart diseases.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a subclass of Patient</rdfs:isDefinedBy>
+        <rdfs:label>HeartPatient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#KidneyPatient -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#KidneyPatient">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:comment>A patient suffering from Kidney problems.</rdfs:comment>
+        <rdfs:isDefinedBy>KidneyPatient is a subclass of Patient.</rdfs:isDefinedBy>
+        <rdfs:label>KidneyPatient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#LeverPatient -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/sanjutiwari#LeverPatient">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+        <rdfs:comment>A patient suffering from lever problem.</rdfs:comment>
+        <rdfs:isDefinedBy>It is a subclass of Patient.</rdfs:isDefinedBy>
+        <rdfs:label>LeverPatient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Bon -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Bon">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#KidneyPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Jack -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Jack">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#HeartPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#John -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#John">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#KidneyPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Kan -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Kan">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#LeverPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Rob -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Rob">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#HeartPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Robin -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Robin">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#HeartPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Rock -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Rock">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#LeverPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Sam -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Sam">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#KidneyPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Som -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Som">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#LeverPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Steve -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Steve">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#HeartPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/sanjutiwari#Tove -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/sanjutiwari#Tove">
+        <rdf:type rdf:resource="https://w3id.org/def/sanjutiwari#LeverPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <dc:creator>Dr. Sanju Tiwari</dc:creator>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://w3id.org/def/sanjutiwari#P">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://w3id.org/def/SmartHealthCare#Patient"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/sanjutiwari#P"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/sanjutiwari#hasSymptoms"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/sanjutiwari#P"/>
+                                <swrl:argument2>cough</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/sanjutiwari#hasSymptoms"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/sanjutiwari#P"/>
+                                        <swrl:argument2>fever</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/sanjutiwari#doTest"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/sanjutiwari#P"/>
+                        <swrl:argument2>corona</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

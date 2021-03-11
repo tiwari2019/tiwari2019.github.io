@@ -1,0 +1,3213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Smart Health Care Ontology for Health Care</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/def/sanjutiwari","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/def/sanjutiwari","name":"Smart Health Care Ontology for Health Care", "headline":"It is a smart semantic model to store the health care descriptions with their entities, properties and attributes. Knowledge can be infer by SWRL rules and SPARQL Queries.", "datePublished":"04/12/2018", "version":"1.1", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Dr. Sanju Tiwari"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Smart Health Care Ontology for Health Care</h1>
+<h2>Release  04/12/2018</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/def/sanjutiwari">https://w3id.org/def/sanjutiwari</a></dd>
+<dt>Revision:</dt>
+<dd>1.1</dd>
+<dt>Authors:</dt>
+<dd>Dr. Sanju Tiwari</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Dr. Sanju Tiwari. Smart Health Care Ontology for Health Care. Revision: 1.1.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+It is a smart semantic model to store the health care descriptions with their entities, properties and attributes. Knowledge can be infer by SWRL rules and SPARQL Queries.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://w3id.org/def/sanjutiwari&gt;</td></tr>
+<tr><td><b>def</b></td><td>&lt;https://w3id.org/def&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>swrl</b></td><td>&lt;http://www.w3.org/2003/11/swrl&gt;</td></tr>
+<tr><td><b>swrlb</b></td><td>&lt;http://www.w3.org/2003/11/swrlb&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>swrla</b></td><td>&lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl&gt;</td></tr>
+<tr><td><b>smarthealthcare</b></td><td>&lt;https://w3id.org/def/SmartHealthCare&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>rdflicense</b></td><td>&lt;http://purl.org/NET/rdflicense&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Smart Health Care Ontology for Health Care: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul class="hlist">
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Actuators" title="https://w3id.org/def/SmartHealthCare#Actuators">Actuators</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Administrator"
+         title="https://w3id.org/def/SmartHealthCare#Administrator">Administrator</a>
+   </li>
+   <li>
+      <a href="#BloodPressure" title="https://w3id.org/def/sanjutiwari#BloodPressure">BloodPressure</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Body_Temp" title="https://w3id.org/def/SmartHealthCare#Body_Temp">Body_Temp</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#BPSensores" title="https://w3id.org/def/SmartHealthCare#BPSensores">BPSensores</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Cardiologist"
+         title="https://w3id.org/def/SmartHealthCare#Cardiologist">Cardiologist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#ChestPain" title="https://w3id.org/def/SmartHealthCare#ChestPain">ChestPain</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"
+         title="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">ClinicalPharmacist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#CommunityPharmacist"
+         title="https://w3id.org/def/SmartHealthCare#CommunityPharmacist">CommunityPharmacist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Consultation"
+         title="https://w3id.org/def/SmartHealthCare#Consultation">Consultation</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Cough" title="https://w3id.org/def/SmartHealthCare#Cough">Cough</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Diagnosis" title="https://w3id.org/def/SmartHealthCare#Diagnosis">Diagnosis</a>
+   </li>
+   <li>
+      <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+   </li>
+   <li>
+      <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#DoctorsPrescription"
+         title="https://w3id.org/def/SmartHealthCare#DoctorsPrescription">DoctorsPrescription</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Fever" title="https://w3id.org/def/SmartHealthCare#Fever">Fever</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#GeneralPractice"
+         title="https://w3id.org/def/SmartHealthCare#GeneralPractice">GeneralPractice</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Headache" title="https://w3id.org/def/SmartHealthCare#Headache">Headache</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+         title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#HealthProvider"
+         title="https://w3id.org/def/SmartHealthCare#HealthProvider">HealthProvider</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#HeartBeat" title="https://w3id.org/def/SmartHealthCare#HeartBeat">HeartBeat</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#HeartbeatSensors"
+         title="https://w3id.org/def/SmartHealthCare#HeartbeatSensors">HeartbeatSensors</a>
+   </li>
+   <li>
+      <a href="#HeartDisease" title="https://w3id.org/def/sanjutiwari#HeartDisease">HeartDisease</a>
+   </li>
+   <li>
+      <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Hospital" title="https://w3id.org/def/SmartHealthCare#Hospital">Hospital</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Insurance" title="https://w3id.org/def/SmartHealthCare#Insurance">Insurance</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#InsurancePolicy"
+         title="https://w3id.org/def/SmartHealthCare#InsurancePolicy">InsurancePolicy</a>
+   </li>
+   <li>
+      <a href="#KidneyPatient" title="https://w3id.org/def/sanjutiwari#KidneyPatient">KidneyPatient</a>
+   </li>
+   <li>
+      <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Manager" title="https://w3id.org/def/SmartHealthCare#Manager">Manager</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Medical_Oncologist"
+         title="https://w3id.org/def/SmartHealthCare#Medical_Oncologist">Medical_Oncologist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#MedicalRecord"
+         title="https://w3id.org/def/SmartHealthCare#MedicalRecord">MedicalRecord</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Nurse" title="https://w3id.org/def/SmartHealthCare#Nurse">Nurse</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Oncologist" title="https://w3id.org/def/SmartHealthCare#Oncologist">Oncologist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist"
+         title="https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist">Oncology_Pharmacist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+         title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Pharmacist" title="https://w3id.org/def/SmartHealthCare#Pharmacist">Pharmacist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist"
+         title="https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist">Phychiatric_Pharmacist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Physician" title="https://w3id.org/def/SmartHealthCare#Physician">Physician</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Pulmonologist"
+         title="https://w3id.org/def/SmartHealthCare#Pulmonologist">Pulmonologist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Radiation_Oncologist"
+         title="https://w3id.org/def/SmartHealthCare#Radiation_Oncologist">Radiation_Oncologist</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Record" title="https://w3id.org/def/SmartHealthCare#Record">Record</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Referral" title="https://w3id.org/def/SmartHealthCare#Referral">Referral</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#RFID" title="https://w3id.org/def/SmartHealthCare#RFID">RFID</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Surgeon" title="https://w3id.org/def/SmartHealthCare#Surgeon">Surgeon</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Surgery" title="https://w3id.org/def/SmartHealthCare#Surgery">Surgery</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#TemperatureSensors"
+         title="https://w3id.org/def/SmartHealthCare#TemperatureSensors">Temperature Sensors</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#Treatment" title="https://w3id.org/def/SmartHealthCare#Treatment">Treatment</a>
+   </li>
+</ul><h4>Object Properties</h4><ul class="hlist">
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#cared_by" title="https://w3id.org/def/SmartHealthCare#cared_by">cared_by</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#cares_for" title="https://w3id.org/def/SmartHealthCare#cares_for">cares_for</a>
+   </li>
+   <li>
+      <a href="#found_in" title="https://w3id.org/def/sanjutiwari#found_in">found_in</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#has" title="https://w3id.org/def/SmartHealthCare#has">has</a>
+   </li>
+   <li>
+      <a href="#has_manage" title="https://w3id.org/def/sanjutiwari#has_manage">has_manage</a>
+   </li>
+   <li>
+      <a href="#has_measured" title="https://w3id.org/def/sanjutiwari#has_measured">has_measured</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#looks_for" title="https://w3id.org/def/SmartHealthCare#looks_for">looks_for</a>
+   </li>
+   <li>
+      <a href="#managed_by" title="https://w3id.org/def/sanjutiwari#managed_by">managed_by</a>
+   </li>
+   <li>
+      <a href="#measured_by" title="https://w3id.org/def/sanjutiwari#measured_by">measured_by</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#operates" title="https://w3id.org/def/SmartHealthCare#operates">operates</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#operates_by" title="https://w3id.org/def/SmartHealthCare#operates_by">operates_by</a>
+   </li>
+   <li>
+      <a href="#recieved_data" title="https://w3id.org/def/sanjutiwari#recieved_data">received_data</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#transfer_data_to"
+         title="https://w3id.org/def/SmartHealthCare#transfer_data_to">transfer_data_to</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/def/SmartHealthCare#treated_by" title="https://w3id.org/def/SmartHealthCare#treated_by">treated_by</a>
+   </li>
+</ul><h4>Data Properties</h4><ul class="hlist">
+   <li>
+      <a href="#doTest" title="https://w3id.org/def/sanjutiwari#doTest">
+         <span>do test</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasSymptoms" title="https://w3id.org/def/sanjutiwari#hasSymptoms">
+         <span>has symptoms</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasAddress" title="https://w3id.org/def/sanjutiwari#hasAddress">hasAddress</a>
+   </li>
+   <li>
+      <a href="#hasManufacture" title="https://w3id.org/def/sanjutiwari#hasManufacture">hasManufacture</a>
+   </li>
+   <li>
+      <a href="#hasModel" title="https://w3id.org/def/sanjutiwari#hasModel">hasModel</a>
+   </li>
+   <li>
+      <a href="#hasName" title="https://w3id.org/def/sanjutiwari#hasName">hasName</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/contributor" title="http://purl.org/dc/elements/1.1/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"
+         title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+         <span>is rule enabled</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/license" title="http://purl.org/dc/elements/1.1/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/source" title="http://purl.org/dc/elements/1.1/source">
+         <span>source</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul class="hlist">
+   <li>
+      <a href="#Bon" title="https://w3id.org/def/sanjutiwari#Bon">
+         <span>bon</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Jack" title="https://w3id.org/def/sanjutiwari#Jack">
+         <span>jack</span>
+      </a>
+   </li>
+   <li>
+      <a href="#John" title="https://w3id.org/def/sanjutiwari#John">
+         <span>john</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Kan" title="https://w3id.org/def/sanjutiwari#Kan">
+         <span>kan</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Rob" title="https://w3id.org/def/sanjutiwari#Rob">
+         <span>rob</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Robin" title="https://w3id.org/def/sanjutiwari#Robin">
+         <span>robin</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Rock" title="https://w3id.org/def/sanjutiwari#Rock">
+         <span>rock</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Sam" title="https://w3id.org/def/sanjutiwari#Sam">
+         <span>sam</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Som" title="https://w3id.org/def/sanjutiwari#Som">
+         <span>som</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Steve" title="https://w3id.org/def/sanjutiwari#Steve">
+         <span>steve</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Tove" title="https://w3id.org/def/sanjutiwari#Tove">
+         <span>tove</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Smart Health Care Ontology for Health Care: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for Smart Health Care Ontology for Health Care classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Smart Health Care Ontology for Health Care.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Actuators" title="https://w3id.org/def/SmartHealthCare#Actuators">Actuators</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Administrator"
+            title="https://w3id.org/def/SmartHealthCare#Administrator">Administrator</a>
+      </li>
+      <li>
+         <a href="#BloodPressure" title="https://w3id.org/def/sanjutiwari#BloodPressure">BloodPressure</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Body_Temp" title="https://w3id.org/def/SmartHealthCare#Body_Temp">Body_Temp</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#BPSensores" title="https://w3id.org/def/SmartHealthCare#BPSensores">BPSensores</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Cardiologist"
+            title="https://w3id.org/def/SmartHealthCare#Cardiologist">Cardiologist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#ChestPain" title="https://w3id.org/def/SmartHealthCare#ChestPain">ChestPain</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"
+            title="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">ClinicalPharmacist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#CommunityPharmacist"
+            title="https://w3id.org/def/SmartHealthCare#CommunityPharmacist">CommunityPharmacist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Consultation"
+            title="https://w3id.org/def/SmartHealthCare#Consultation">Consultation</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Cough" title="https://w3id.org/def/SmartHealthCare#Cough">Cough</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Diagnosis" title="https://w3id.org/def/SmartHealthCare#Diagnosis">Diagnosis</a>
+      </li>
+      <li>
+         <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+      </li>
+      <li>
+         <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#DoctorsPrescription"
+            title="https://w3id.org/def/SmartHealthCare#DoctorsPrescription">DoctorsPrescription</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Fever" title="https://w3id.org/def/SmartHealthCare#Fever">Fever</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#GeneralPractice"
+            title="https://w3id.org/def/SmartHealthCare#GeneralPractice">GeneralPractice</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Headache" title="https://w3id.org/def/SmartHealthCare#Headache">Headache</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+            title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#HealthProvider"
+            title="https://w3id.org/def/SmartHealthCare#HealthProvider">HealthProvider</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#HeartBeat" title="https://w3id.org/def/SmartHealthCare#HeartBeat">HeartBeat</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#HeartbeatSensors"
+            title="https://w3id.org/def/SmartHealthCare#HeartbeatSensors">HeartbeatSensors</a>
+      </li>
+      <li>
+         <a href="#HeartDisease" title="https://w3id.org/def/sanjutiwari#HeartDisease">HeartDisease</a>
+      </li>
+      <li>
+         <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Hospital" title="https://w3id.org/def/SmartHealthCare#Hospital">Hospital</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Insurance" title="https://w3id.org/def/SmartHealthCare#Insurance">Insurance</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#InsurancePolicy"
+            title="https://w3id.org/def/SmartHealthCare#InsurancePolicy">InsurancePolicy</a>
+      </li>
+      <li>
+         <a href="#KidneyPatient" title="https://w3id.org/def/sanjutiwari#KidneyPatient">KidneyPatient</a>
+      </li>
+      <li>
+         <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Manager" title="https://w3id.org/def/SmartHealthCare#Manager">Manager</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Medical_Oncologist"
+            title="https://w3id.org/def/SmartHealthCare#Medical_Oncologist">Medical_Oncologist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#MedicalRecord"
+            title="https://w3id.org/def/SmartHealthCare#MedicalRecord">MedicalRecord</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Nurse" title="https://w3id.org/def/SmartHealthCare#Nurse">Nurse</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Oncologist" title="https://w3id.org/def/SmartHealthCare#Oncologist">Oncologist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist"
+            title="https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist">Oncology_Pharmacist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+            title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Pharmacist" title="https://w3id.org/def/SmartHealthCare#Pharmacist">Pharmacist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist"
+            title="https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist">Phychiatric_Pharmacist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Physician" title="https://w3id.org/def/SmartHealthCare#Physician">Physician</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Pulmonologist"
+            title="https://w3id.org/def/SmartHealthCare#Pulmonologist">Pulmonologist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Radiation_Oncologist"
+            title="https://w3id.org/def/SmartHealthCare#Radiation_Oncologist">Radiation_Oncologist</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Record" title="https://w3id.org/def/SmartHealthCare#Record">Record</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Referral" title="https://w3id.org/def/SmartHealthCare#Referral">Referral</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#RFID" title="https://w3id.org/def/SmartHealthCare#RFID">RFID</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Surgeon" title="https://w3id.org/def/SmartHealthCare#Surgeon">Surgeon</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Surgery" title="https://w3id.org/def/SmartHealthCare#Surgery">Surgery</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#TemperatureSensors"
+            title="https://w3id.org/def/SmartHealthCare#TemperatureSensors">Temperature Sensors</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#Treatment" title="https://w3id.org/def/SmartHealthCare#Treatment">Treatment</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Actor">
+      <h3>Actor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Actor</p>
+      <div class="comment">
+         <span class="markdown">Actor can perform a concrete intervention or problem assessment such as Doctor, Manager, Nurse, Patient, Surgeon etc,</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Administrator"
+               title="https://w3id.org/def/SmartHealthCare#Administrator">Administrator</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#HealthProvider"
+               title="https://w3id.org/def/SmartHealthCare#HealthProvider">HealthProvider</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Manager" title="https://w3id.org/def/SmartHealthCare#Manager">Manager</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Nurse" title="https://w3id.org/def/SmartHealthCare#Nurse">Nurse</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Surgeon" title="https://w3id.org/def/SmartHealthCare#Surgeon">Surgeon</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasName" title="https://w3id.org/def/sanjutiwari#hasName">hasName</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#recieved_data" title="https://w3id.org/def/sanjutiwari#recieved_data">received_data</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#transfer_data_to"
+               title="https://w3id.org/def/SmartHealthCare#transfer_data_to">transfer_data_to</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Actuators">
+      <h3>Actuators<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Actuators</p>
+      <div class="comment">
+         <span class="markdown">An actuator is a device that converts energy into motion or applies force. The mechanical device takes energy in the form of hydraulics, pneumatics, or from a motor, and converts it into motion.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+               title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Administrator">
+      <h3>Administrator<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Administrator</p>
+      <div class="comment">
+         <span class="markdown">Administrators are responsible for the day-to-day operation of a hospital.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BloodPressure">
+      <h3>BloodPressure<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#BloodPressure</p>
+      <div class="comment">
+         <span class="markdown">It is a disease.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Body_Temp">
+      <h3>Body_Temp<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Body_Temp</p>
+      <div class="comment">
+         <span class="markdown">Temperature of the body; normally 98.6 F or 37 C in humans; usually measured to obtain a quick evaluation of a person's health</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#BPSensores">
+      <h3>BPSensores<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#BPSensores</p>
+      <div class="comment">
+         <span class="markdown">Sensing and Storing the Blood Pressure Measure by Patients through A Platform and Mobile Devices Sensors</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Cardiologist">
+      <h3>Cardiologist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Cardiologist</p>
+      <div class="comment">
+         <span class="markdown">A cardiologist is a medical doctor who is trained and certified to help patients who have problems with their heart, blood vessels or other things connected to the cardiovascular system.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Physician" title="https://w3id.org/def/SmartHealthCare#Physician">Physician</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#ChestPain">
+      <h3>ChestPain<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#ChestPain</p>
+      <div class="comment">
+         <span class="markdown">Pain in the chest that can be a result of many things, including angina, heart attack (coronary occlusion), and other important diseases. Chest pain is a warning to seek medical attention, so one should try not to ignore chest pain and 'work through it.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">
+      <h3>ClinicalPharmacist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#ClinicalPharmacist</p>
+      <div class="comment">
+         <span class="markdown">Clinical pharmacists work directly with physicians, other health professionals, and patients to ensure that the medications prescribed for patients contribute to the best possible health outcomes.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Pharmacist" title="https://w3id.org/def/SmartHealthCare#Pharmacist">Pharmacist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist"
+               title="https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist">Oncology_Pharmacist</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist"
+               title="https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist">Phychiatric_Pharmacist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#CommunityPharmacist">
+      <h3>CommunityPharmacist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#CommunityPharmacist</p>
+      <div class="comment">
+         <span class="markdown">Community pharmacists are the health professionals most accessible to the public. They supply medicines in accordance with a prescription or, when legally permitted, sell them without a prescription.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Pharmacist" title="https://w3id.org/def/SmartHealthCare#Pharmacist">Pharmacist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Consultation">
+      <h3>Consultation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Consultation</p>
+      <div class="comment">
+         <span class="markdown">Consultation is the act of seeking assistance from another physician(s) or health care professional(s) for diagnostic studies, therapeutic interventions, or other services that may benefit the patient.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Cough">
+      <h3>Cough<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Cough</p>
+      <div class="comment">
+         <span class="markdown">A rapid expulsion of air from the lungs, typically in order to clear the lung airways of fluids, mucus, or other material. Also known as tussis</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Diagnosis">
+      <h3>Diagnosis<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Diagnosis</p>
+      <div class="comment">
+         <span class="markdown">Medical diagnosis is the process of determining which disease or condition explains a person's symptoms and signs.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Diseases">
+      <h3>Diseases<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Diseases</p>
+      <div class="comment">
+         <span class="markdown">It is a cause who makes person abnormal.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BloodPressure" title="https://w3id.org/def/sanjutiwari#BloodPressure">BloodPressure</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#HeartDisease" title="https://w3id.org/def/sanjutiwari#HeartDisease">HeartDisease</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#doTest" title="https://w3id.org/def/sanjutiwari#doTest">do test</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSymptoms" title="https://w3id.org/def/sanjutiwari#hasSymptoms">has symptoms</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#measured_by" title="https://w3id.org/def/sanjutiwari#measured_by">measured_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_measured" title="https://w3id.org/def/sanjutiwari#has_measured">has_measured</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Doctor">
+      <h3>Doctor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Doctor</p>
+      <div class="comment">
+         <span class="markdown">A person for the treatment of Patients.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Oncologist" title="https://w3id.org/def/SmartHealthCare#Oncologist">Oncologist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#looks_for" title="https://w3id.org/def/SmartHealthCare#looks_for">looks_for</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#treated_by" title="https://w3id.org/def/SmartHealthCare#treated_by">treated_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#DoctorsPrescription">
+      <h3>DoctorsPrescription<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#DoctorsPrescription</p>
+      <div class="comment">
+         <span class="markdown">It is prescription suggested to patient.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Record" title="https://w3id.org/def/SmartHealthCare#Record">Record</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Event">
+      <h3>Event<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Event</p>
+      <div class="comment">
+         <span class="markdown">Event is a consequence of  care that results several kind of physical states.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Consultation"
+               title="https://w3id.org/def/SmartHealthCare#Consultation">Consultation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Diagnosis" title="https://w3id.org/def/SmartHealthCare#Diagnosis">Diagnosis</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Referral" title="https://w3id.org/def/SmartHealthCare#Referral">Referral</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Surgery" title="https://w3id.org/def/SmartHealthCare#Surgery">Surgery</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Treatment" title="https://w3id.org/def/SmartHealthCare#Treatment">Treatment</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Fever">
+      <h3>Fever<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Fever</p>
+      <div class="comment">
+         <span class="markdown">Although a fever technically is any body temperature above the normal of 98.6 F (37 C), in practice a person is usually not considered to have a significant fever until the temperature is above 100.4 F (38 C)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#GeneralPractice">
+      <h3>GeneralPractice<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#GeneralPractice</p>
+      <div class="comment">
+         <span class="markdown">General practice (GP) General practitioners (GPs) treat all common medical conditions and refer patients to hospitals and other medical services for urgent and specialist treatment.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+               title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Headache">
+      <h3>Headache<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Headache</p>
+      <div class="comment">
+         <span class="markdown">Headache is pain in any region of the head. Headaches may occur on one or both sides of the head, be isolated to a certain location, radiate across the head from one point, or have a viselike quality.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#HealthCare">
+      <h3>HealthCare<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#HealthCare</p>
+      <div class="comment">
+         <span class="markdown">A class for health care objects.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+               title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Record" title="https://w3id.org/def/SmartHealthCare#Record">Record</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#managed_by" title="https://w3id.org/def/sanjutiwari#managed_by">managed_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_manage" title="https://w3id.org/def/sanjutiwari#has_manage">has_manage</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+               title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#HealthDevices">
+      <h3>HealthDevices<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#HealthDevices</p>
+      <div class="comment">
+         <span class="markdown">A medical device is any device intended to be used for medical purposes. ... Medical devices benefit patients by helping health care providers diagnose and treat patients and helping patients overcome sickness or disease, improving their quality of life.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actuators" title="https://w3id.org/def/SmartHealthCare#Actuators">Actuators</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#RFID" title="https://w3id.org/def/SmartHealthCare#RFID">RFID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasManufacture" title="https://w3id.org/def/sanjutiwari#hasManufacture">hasManufacture</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasModel" title="https://w3id.org/def/sanjutiwari#hasModel">hasModel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://w3id.org/def/SmartHealthCare#transfer_data_to"
+               title="https://w3id.org/def/SmartHealthCare#transfer_data_to">transfer_data_to</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#recieved_data" title="https://w3id.org/def/sanjutiwari#recieved_data">received_data</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#HealthProvider">
+      <h3>HealthProvider<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#HealthProvider</p>
+      <div class="comment">
+         <span class="markdown">Person or business that provides health care services to consumers. Most health care providers are part of a network of some sort whether it is a HMO or PPO.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Pharmacist" title="https://w3id.org/def/SmartHealthCare#Pharmacist">Pharmacist</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Physician" title="https://w3id.org/def/SmartHealthCare#Physician">Physician</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#HeartBeat">
+      <h3>HeartBeat<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#HeartBeat</p>
+      <div class="comment">
+         <span class="markdown">Heart rate is the speed of the heartbeat measured by the number of contractions (beats) of the heart per minute (bpm). The heart rate can vary according to the body's physical needs, including the need to absorb oxygen and excrete carbon dioxide. ...</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#HeartbeatSensors">
+      <h3>HeartbeatSensors<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#HeartbeatSensors</p>
+      <div class="comment">
+         <span class="markdown">A heart rate monitor (HRM) is a personal monitoring device that allows one to measure/display ... Medical heart rate monitoring used in hospitals is usually wired and usually multiple sensors are used.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HeartDisease">
+      <h3>HeartDisease<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#HeartDisease</p>
+      <div class="comment">
+         <span class="markdown">It is a disease.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HeartPatient">
+      <h3>HeartPatient<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#HeartPatient</p>
+      <div class="comment">
+         <span class="markdown">A patient suffering from heart diseases.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Jack" title="https://w3id.org/def/sanjutiwari#Jack">jack</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Rob" title="https://w3id.org/def/sanjutiwari#Rob">rob</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Robin" title="https://w3id.org/def/sanjutiwari#Robin">robin</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Steve" title="https://w3id.org/def/sanjutiwari#Steve">steve</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Hospital">
+      <h3>Hospital<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Hospital</p>
+      <div class="comment">
+         <span class="markdown">A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+               title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Insurance">
+      <h3>Insurance<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Insurance</p>
+      <div class="comment">
+         <span class="markdown">Health insurance is a type of insurance coverage that pays for medical and surgical expenses incurred by the insured.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+               title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#InsurancePolicy">
+      <h3>InsurancePolicy<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#InsurancePolicy</p>
+      <div class="comment">
+         <span class="markdown">An insurance policy for patients.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Record" title="https://w3id.org/def/SmartHealthCare#Record">Record</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="KidneyPatient">
+      <h3>KidneyPatient<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#KidneyPatient</p>
+      <div class="comment">
+         <span class="markdown">A patient suffering from Kidney problems.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Bon" title="https://w3id.org/def/sanjutiwari#Bon">bon</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#John" title="https://w3id.org/def/sanjutiwari#John">john</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Sam" title="https://w3id.org/def/sanjutiwari#Sam">sam</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LeverPatient">
+      <h3>LeverPatient<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#LeverPatient</p>
+      <div class="comment">
+         <span class="markdown">A patient suffering from lever problem.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Kan" title="https://w3id.org/def/sanjutiwari#Kan">kan</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Rock" title="https://w3id.org/def/sanjutiwari#Rock">rock</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Som" title="https://w3id.org/def/sanjutiwari#Som">som</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Tove" title="https://w3id.org/def/sanjutiwari#Tove">tove</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Manager">
+      <h3>Manager<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Manager</p>
+      <div class="comment">
+         <span class="markdown">To manage the things.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Medical_Oncologist">
+      <h3>Medical_Oncologist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Medical_Oncologist</p>
+      <div class="comment">
+         <span class="markdown">A medical oncologist often is the main health care provider for someone who has cancer.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Oncologist" title="https://w3id.org/def/SmartHealthCare#Oncologist">Oncologist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#MedicalRecord">
+      <h3>MedicalRecord<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#MedicalRecord</p>
+      <div class="comment">
+         <span class="markdown">A record of Patient and Staff</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Record" title="https://w3id.org/def/SmartHealthCare#Record">Record</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Nurse">
+      <h3>Nurse<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Nurse</p>
+      <div class="comment">
+         <span class="markdown">Nurse is for caring the people.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#cares_for" title="https://w3id.org/def/SmartHealthCare#cares_for">cares_for</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#cared_by" title="https://w3id.org/def/SmartHealthCare#cared_by">cared_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Oncologist">
+      <h3>Oncologist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Oncologist</p>
+      <div class="comment">
+         <span class="markdown">A doctor who has special training in diagnosing and treating cancer in adults using chemotherapy, hormonal therapy, biological therapy, and targeted therapy.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Physician" title="https://w3id.org/def/SmartHealthCare#Physician">Physician</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Medical_Oncologist"
+               title="https://w3id.org/def/SmartHealthCare#Medical_Oncologist">Medical_Oncologist</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Radiation_Oncologist"
+               title="https://w3id.org/def/SmartHealthCare#Radiation_Oncologist">Radiation_Oncologist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist">
+      <h3>Oncology_Pharmacist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist</p>
+      <div class="comment">
+         <span class="markdown">Oncology pharmacists ensure safety in compounding, preparing, and dispensing chemotherapy. ... Because of their expert knowledge of medications, pharmacists play an important role in educating patients, caregivers, and other health care professionals.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"
+               title="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">ClinicalPharmacist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Organization">
+      <h3>Organization<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Organization</p>
+      <div class="comment">
+         <span class="markdown">A health system, also sometimes referred to as health care system or healthcare organization, is the organization of people, institutions, and resources that deliver health care services to meet the health needs of target populations.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#GeneralPractice"
+               title="https://w3id.org/def/SmartHealthCare#GeneralPractice">GeneralPractice</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Hospital" title="https://w3id.org/def/SmartHealthCare#Hospital">Hospital</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Insurance" title="https://w3id.org/def/SmartHealthCare#Insurance">Insurance</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAddress" title="https://w3id.org/def/sanjutiwari#hasAddress">hasAddress</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#has_manage" title="https://w3id.org/def/sanjutiwari#has_manage">has_manage</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#managed_by" title="https://w3id.org/def/sanjutiwari#managed_by">managed_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Patient">
+      <h3>Patient<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Patient</p>
+      <div class="comment">
+         <span class="markdown">A person who needs treatment.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#KidneyPatient" title="https://w3id.org/def/sanjutiwari#KidneyPatient">KidneyPatient</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#cared_by" title="https://w3id.org/def/SmartHealthCare#cared_by">cared_by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/def/SmartHealthCare#has" title="https://w3id.org/def/SmartHealthCare#has">has</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/def/SmartHealthCare#operates_by" title="https://w3id.org/def/SmartHealthCare#operates_by">operates_by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/def/SmartHealthCare#treated_by" title="https://w3id.org/def/SmartHealthCare#treated_by">treated_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#cares_for" title="https://w3id.org/def/SmartHealthCare#cares_for">cares_for</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#found_in" title="https://w3id.org/def/sanjutiwari#found_in">found_in</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/def/SmartHealthCare#looks_for" title="https://w3id.org/def/SmartHealthCare#looks_for">looks_for</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/def/SmartHealthCare#operates" title="https://w3id.org/def/SmartHealthCare#operates">operates</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Pharmacist">
+      <h3>Pharmacist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Pharmacist</p>
+      <div class="comment">
+         <span class="markdown">The pharmacist verifies the legality, safety and appropriateness of the prescription order, checks the patient medication record before dispensing the prescription, ensures that the quantities of medication are dispensed accurately, and decides whether the medication should be handed to the patient, with appropriate counselling.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthProvider"
+               title="https://w3id.org/def/SmartHealthCare#HealthProvider">HealthProvider</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"
+               title="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">ClinicalPharmacist</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#CommunityPharmacist"
+               title="https://w3id.org/def/SmartHealthCare#CommunityPharmacist">CommunityPharmacist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist">
+      <h3>Phychiatric_Pharmacist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist</p>
+      <div class="comment">
+         <span class="markdown">Psychiatric pharmacist are the specialist of clinical pharmacy for the treatment of people with psychiatric illnesses through the use of psychotropic medications.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#ClinicalPharmacist"
+               title="https://w3id.org/def/SmartHealthCare#ClinicalPharmacist">ClinicalPharmacist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Physician">
+      <h3>Physician<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Physician</p>
+      <div class="comment">
+         <span class="markdown">A physician, medical practitioner, medical doctor, or simply doctor, is a professional who practises medicine, which is concerned with promoting, maintaining, or restoring health through the study, diagnosis, prognosis and treatment of disease, injury, and other physical and mental impairments.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthProvider"
+               title="https://w3id.org/def/SmartHealthCare#HealthProvider">HealthProvider</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Cardiologist"
+               title="https://w3id.org/def/SmartHealthCare#Cardiologist">Cardiologist</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Oncologist" title="https://w3id.org/def/SmartHealthCare#Oncologist">Oncologist</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Pulmonologist"
+               title="https://w3id.org/def/SmartHealthCare#Pulmonologist">Pulmonologist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Pulmonologist">
+      <h3>Pulmonologist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Pulmonologist</p>
+      <div class="comment">
+         <span class="markdown">Pulmonologists treat breathing disorders, and may also specialize in some treatment of sleep disorders, severe allergies, and other lung conditions and diseases.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Physician" title="https://w3id.org/def/SmartHealthCare#Physician">Physician</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Radiation_Oncologist">
+      <h3>Radiation_Oncologist<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Radiation_Oncologist</p>
+      <div class="comment">
+         <span class="markdown">Radiation oncologists are health care professionals who treat cancers and tumors through radiation therapy. Radiation oncologists must be able to handle difficult emotional situations involving cancer patients and their families.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Oncologist" title="https://w3id.org/def/SmartHealthCare#Oncologist">Oncologist</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Record">
+      <h3>Record<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Record</p>
+      <div class="comment">
+         <span class="markdown">A record of a patient's medical information (as medical history, care or treatments received, test results, diagnoses, and medications taken)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#DoctorsPrescription"
+               title="https://w3id.org/def/SmartHealthCare#DoctorsPrescription">DoctorsPrescription</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#InsurancePolicy"
+               title="https://w3id.org/def/SmartHealthCare#InsurancePolicy">InsurancePolicy</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#MedicalRecord"
+               title="https://w3id.org/def/SmartHealthCare#MedicalRecord">MedicalRecord</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Referral">
+      <h3>Referral<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Referral</p>
+      <div class="comment">
+         <span class="markdown">A written order from your primary care doctor for you to see a specialist or get certain medical services.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#RFID">
+      <h3>RFID<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#RFID</p>
+      <div class="comment">
+         <span class="markdown">RFID is present in many forms – from tracking of surgical tools to tracking patients and staff.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+               title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Sensores">
+      <h3>Sensores<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Sensores</p>
+      <div class="comment">
+         <span class="markdown">Sensors are devices that detect physical, chemical, and biological signals and provide a way for those signals to be measured and recorded.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+               title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#BPSensores" title="https://w3id.org/def/SmartHealthCare#BPSensores">BPSensores</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#HeartbeatSensors"
+               title="https://w3id.org/def/SmartHealthCare#HeartbeatSensors">HeartbeatSensors</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#TemperatureSensors"
+               title="https://w3id.org/def/SmartHealthCare#TemperatureSensors">Temperature Sensors</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#has_measured" title="https://w3id.org/def/sanjutiwari#has_measured">has_measured</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#measured_by" title="https://w3id.org/def/sanjutiwari#measured_by">measured_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Surgeon">
+      <h3>Surgeon<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Surgeon</p>
+      <div class="comment">
+         <span class="markdown">A person to do surgery of patients.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#operates" title="https://w3id.org/def/SmartHealthCare#operates">operates</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#operates_by" title="https://w3id.org/def/SmartHealthCare#operates_by">operates_by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Surgery">
+      <h3>Surgery<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Surgery</p>
+      <div class="comment">
+         <span class="markdown">The branch of medicine that employs operations in the treatment of disease or injury. Surgery can involve cutting, abrading, suturing, or otherwise physically changing body tissues and organs.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Sympotoms">
+      <h3>Symptoms<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Sympotoms</p>
+      <div class="comment">
+         <span class="markdown">A symptom is a departure from normal function or feeling which is apparent to a patient, reflecting the presence of an unusual state, or of a disease. A symptom can be subjective or objective.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Body_Temp" title="https://w3id.org/def/SmartHealthCare#Body_Temp">Body_Temp</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#ChestPain" title="https://w3id.org/def/SmartHealthCare#ChestPain">ChestPain</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Cough" title="https://w3id.org/def/SmartHealthCare#Cough">Cough</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Fever" title="https://w3id.org/def/SmartHealthCare#Fever">Fever</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#Headache" title="https://w3id.org/def/SmartHealthCare#Headache">Headache</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/def/SmartHealthCare#HeartBeat" title="https://w3id.org/def/SmartHealthCare#HeartBeat">HeartBeat</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#found_in" title="https://w3id.org/def/sanjutiwari#found_in">found_in</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#has" title="https://w3id.org/def/SmartHealthCare#has">has</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#TemperatureSensors">
+      <h3>Temperature Sensors<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#TemperatureSensors</p>
+      <div class="comment">
+         <span class="markdown">One used to determine the temperature of the patient in clinical situations. a clinical thermometer using a sensor based on thermistors, solid-state electronic devices whose electrical characteristics change with temperature.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#Treatment">
+      <h3>Treatment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#Treatment</p>
+      <div class="comment">
+         <span class="markdown">Medical treatment means the management and care of a patient to combat disease or disorder.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/SmartHealthCare#Event" title="https://w3id.org/def/SmartHealthCare#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#cared_by" title="https://w3id.org/def/SmartHealthCare#cared_by">cared_by</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#cares_for" title="https://w3id.org/def/SmartHealthCare#cares_for">cares_for</a>
+      </li>
+      <li>
+         <a href="#found_in" title="https://w3id.org/def/sanjutiwari#found_in">found_in</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#has" title="https://w3id.org/def/SmartHealthCare#has">has</a>
+      </li>
+      <li>
+         <a href="#has_manage" title="https://w3id.org/def/sanjutiwari#has_manage">has_manage</a>
+      </li>
+      <li>
+         <a href="#has_measured" title="https://w3id.org/def/sanjutiwari#has_measured">has_measured</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#looks_for" title="https://w3id.org/def/SmartHealthCare#looks_for">looks_for</a>
+      </li>
+      <li>
+         <a href="#managed_by" title="https://w3id.org/def/sanjutiwari#managed_by">managed_by</a>
+      </li>
+      <li>
+         <a href="#measured_by" title="https://w3id.org/def/sanjutiwari#measured_by">measured_by</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#operates" title="https://w3id.org/def/SmartHealthCare#operates">operates</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#operates_by" title="https://w3id.org/def/SmartHealthCare#operates_by">operates_by</a>
+      </li>
+      <li>
+         <a href="#recieved_data" title="https://w3id.org/def/sanjutiwari#recieved_data">received_data</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#transfer_data_to"
+            title="https://w3id.org/def/SmartHealthCare#transfer_data_to">transfer_data_to</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/SmartHealthCare#treated_by" title="https://w3id.org/def/SmartHealthCare#treated_by">treated_by</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#cared_by">
+      <h3>cared_by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#cared_by</p>
+      <div class="comment">
+         <span class="markdown">Property for Patient</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Nurse" title="https://w3id.org/def/SmartHealthCare#Nurse">Nurse</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#cares_for" title="https://w3id.org/def/SmartHealthCare#cares_for">cares_for</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#cares_for">
+      <h3>cares_for<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#cares_for</p>
+      <div class="comment">
+         <span class="markdown">A property for Doctors</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Nurse" title="https://w3id.org/def/SmartHealthCare#Nurse">Nurse</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#cared_by" title="https://w3id.org/def/SmartHealthCare#cared_by">cared_by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="found_in">
+      <h3>found_in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#found_in</p>
+      <div class="comment">
+         <span class="markdown">An Object Property for diagnosing the symptoms.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#has" title="https://w3id.org/def/SmartHealthCare#has">has</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#has">
+      <h3>has<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#has</p>
+      <div class="comment">
+         <span class="markdown">Property to contain.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Sympotoms" title="https://w3id.org/def/SmartHealthCare#Sympotoms">Symptoms</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#found_in" title="https://w3id.org/def/sanjutiwari#found_in">found_in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_manage">
+      <h3>has_manage<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#has_manage</p>
+      <div class="comment">
+         <span class="markdown">An object property to manage organisation.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+                  title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#managed_by" title="https://w3id.org/def/sanjutiwari#managed_by">managed_by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_measured">
+      <h3>has_measured<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#has_measured</p>
+      <div class="comment">
+         <span class="markdown">An object property to measure the diseases by sensor.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#measured_by" title="https://w3id.org/def/sanjutiwari#measured_by">measured_by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#looks_for">
+      <h3>looks_for<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#looks_for</p>
+      <div class="comment">
+         <span class="markdown">Propert to look patients</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#treated_by" title="https://w3id.org/def/SmartHealthCare#treated_by">treated_by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="managed_by">
+      <h3>managed_by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#managed_by</p>
+      <div class="comment">
+         <span class="markdown">An object property to manage the Healthcare</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#HealthCare" title="https://w3id.org/def/SmartHealthCare#HealthCare">HealthCare</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+                  title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_manage" title="https://w3id.org/def/sanjutiwari#has_manage">has_manage</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="measured_by">
+      <h3>measured_by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#measured_by</p>
+      <div class="comment">
+         <span class="markdown">Property to measure.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Sensores" title="https://w3id.org/def/SmartHealthCare#Sensores">Sensores</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_measured" title="https://w3id.org/def/sanjutiwari#has_measured">has_measured</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#operates">
+      <h3>operates<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#operates</p>
+      <div class="comment">
+         <span class="markdown">Property for operator.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Surgeon" title="https://w3id.org/def/SmartHealthCare#Surgeon">Surgeon</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#operates_by" title="https://w3id.org/def/SmartHealthCare#operates_by">operates_by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#operates_by">
+      <h3>operates_by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#operates_by</p>
+      <div class="comment">
+         <span class="markdown">Property to operate by doctor.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Surgeon" title="https://w3id.org/def/SmartHealthCare#Surgeon">Surgeon</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#operates" title="https://w3id.org/def/SmartHealthCare#operates">operates</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="recieved_data">
+      <h3>received_data<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#recieved_data</p>
+      <div class="comment">
+         <span class="markdown">A Property to receive the data from HealthDevices.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+                  title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#transfer_data_to"
+                  title="https://w3id.org/def/SmartHealthCare#transfer_data_to">transfer_data_to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#transfer_data_to">
+      <h3>transfer_data_to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#transfer_data_to</p>
+      <div class="comment">
+         <span class="markdown">Property to transfer data.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+                  title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#recieved_data" title="https://w3id.org/def/sanjutiwari#recieved_data">received_data</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/def/SmartHealthCare#treated_by">
+      <h3>treated_by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/SmartHealthCare#treated_by</p>
+      <div class="comment">
+         <span class="markdown">Property for treatment.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/def/sanjutiwari</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Patient" title="https://w3id.org/def/SmartHealthCare#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Doctor" title="https://w3id.org/def/sanjutiwari#Doctor">Doctor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#looks_for" title="https://w3id.org/def/SmartHealthCare#looks_for">looks_for</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#doTest" title="https://w3id.org/def/sanjutiwari#doTest">
+            <span>do test</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasSymptoms" title="https://w3id.org/def/sanjutiwari#hasSymptoms">
+            <span>has symptoms</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasAddress" title="https://w3id.org/def/sanjutiwari#hasAddress">hasAddress</a>
+      </li>
+      <li>
+         <a href="#hasManufacture" title="https://w3id.org/def/sanjutiwari#hasManufacture">hasManufacture</a>
+      </li>
+      <li>
+         <a href="#hasModel" title="https://w3id.org/def/sanjutiwari#hasModel">hasModel</a>
+      </li>
+      <li>
+         <a href="#hasName" title="https://w3id.org/def/sanjutiwari#hasName">hasName</a>
+      </li>
+   </ul>
+   <div class="entity" id="doTest">
+      <h3>do test<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#doTest</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>{ "TB" , "corona" , "dengue" , "malaria" , "sugar" }</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSymptoms">
+      <h3>has symptoms<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#hasSymptoms</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diseases" title="https://w3id.org/def/sanjutiwari#Diseases">Diseases</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>{ "cough" , "fever" , "loos motions" , "vomiting" }</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAddress">
+      <h3>hasAddress<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#hasAddress</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Organization"
+                  title="https://w3id.org/def/SmartHealthCare#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasManufacture">
+      <h3>hasManufacture<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#hasManufacture</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+                  title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasModel">
+      <h3>hasModel<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#hasModel</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#HealthDevices"
+                  title="https://w3id.org/def/SmartHealthCare#HealthDevices">HealthDevices</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasName">
+      <h3>hasName<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#hasName</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/def/SmartHealthCare#Actor" title="https://w3id.org/def/SmartHealthCare#Actor">Actor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="annotationproperties">
+   <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/contributor" title="http://purl.org/dc/elements/1.1/contributor">
+            <span>contributor</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+            <span>created</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+            <span>creator</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+            <span>description</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"
+            title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+            <span>is rule enabled</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/license" title="http://purl.org/dc/elements/1.1/license">
+            <span>license</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+            <span>license</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/source" title="http://purl.org/dc/elements/1.1/source">
+            <span>source</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+            <span>title</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/contributor">
+      <h3>contributor<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/contributor</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/created">
+      <h3>created<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+      <h3>creator<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+      <h3>description<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+   </div>
+   <div class="entity" id="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+      <h3>is rule enabled<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/license">
+      <h3>license<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/license</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/license">
+      <h3>license<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/source">
+      <h3>source<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/source</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+      <h3>title<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+   </div>
+</div><div id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Bon" title="https://w3id.org/def/sanjutiwari#Bon">
+            <span>bon</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Jack" title="https://w3id.org/def/sanjutiwari#Jack">
+            <span>jack</span>
+         </a>
+      </li>
+      <li>
+         <a href="#John" title="https://w3id.org/def/sanjutiwari#John">
+            <span>john</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Kan" title="https://w3id.org/def/sanjutiwari#Kan">
+            <span>kan</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Rob" title="https://w3id.org/def/sanjutiwari#Rob">
+            <span>rob</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Robin" title="https://w3id.org/def/sanjutiwari#Robin">
+            <span>robin</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Rock" title="https://w3id.org/def/sanjutiwari#Rock">
+            <span>rock</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Sam" title="https://w3id.org/def/sanjutiwari#Sam">
+            <span>sam</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Som" title="https://w3id.org/def/sanjutiwari#Som">
+            <span>som</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Steve" title="https://w3id.org/def/sanjutiwari#Steve">
+            <span>steve</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Tove" title="https://w3id.org/def/sanjutiwari#Tove">
+            <span>tove</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="Bon">
+      <h3>bon<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Bon</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#KidneyPatient" title="https://w3id.org/def/sanjutiwari#KidneyPatient">KidneyPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Jack">
+      <h3>jack<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Jack</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="John">
+      <h3>john<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#John</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#KidneyPatient" title="https://w3id.org/def/sanjutiwari#KidneyPatient">KidneyPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Kan">
+      <h3>kan<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Kan</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Rob">
+      <h3>rob<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Rob</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Robin">
+      <h3>robin<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Robin</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Rock">
+      <h3>rock<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Rock</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Sam">
+      <h3>sam<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Sam</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#KidneyPatient" title="https://w3id.org/def/sanjutiwari#KidneyPatient">KidneyPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Som">
+      <h3>som<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Som</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Steve">
+      <h3>steve<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Steve</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#HeartPatient" title="https://w3id.org/def/sanjutiwari#HeartPatient">HeartPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Tove">
+      <h3>tove<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/sanjutiwari#Tove</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#LeverPatient" title="https://w3id.org/def/sanjutiwari#LeverPatient">LeverPatient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgements">
+<h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

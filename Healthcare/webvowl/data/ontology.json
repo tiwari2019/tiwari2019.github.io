@@ -1,0 +1,2429 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "https://w3id.org/def/sanjutiwari", "https://w3id.org/def/SmartHealthCare", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "Smart Health Care Ontology for Health Care"
+    },
+    "iri" : "https://w3id.org/def/sanjutiwari",
+    "version" : "1.1",
+    "author" : [ "Dr. Sanju Tiwari" ],
+    "description" : {
+      "undefined" : "It is a smart semantic model to store the health care descriptions with their entities, properties and attributes. Knowledge can be infer by SWRL rules and SPARQL Queries."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://purl.org/NET/rdflicense/cc-by4.0",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Dr. Sanju Tiwari",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Prof. Dr. Ajith Abraham",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "04/12/2018",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.1",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Smart Health Care Ontology for Health Care",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  }, {
+    "id" : "37",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "97",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "85",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "122",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "123",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "113",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "124",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "86",
+    "type" : "owl:Class"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "owl:Class"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "104",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "69",
+    "type" : "owl:Class"
+  }, {
+    "id" : "106",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Phychiatric_Pharmacist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Phychiatric_Pharmacist is a sub-class of Pharmacist",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Phychiatric_Pharmacist",
+      "undefined" : "Phychiatric_Pharmacist"
+    },
+    "comment" : {
+      "undefined" : "Psychiatric pharmacist are the specialist of clinical pharmacy for the treatment of people with psychiatric illnesses through the use of psychotropic medications."
+    },
+    "attributes" : [ "external" ],
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#HeartPatient",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a subclass of Patient",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HeartPatient",
+      "undefined" : "HeartPatient"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/def/sanjutiwari#Rob",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Rob"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Robin",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Robin"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Jack",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Jack"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Steve",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Steve"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A patient suffering from heart diseases."
+    },
+    "id" : "5",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Administrator",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a Subclass of Actor",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Administrator",
+      "undefined" : "Administrator"
+    },
+    "comment" : {
+      "undefined" : "Administrators are responsible for the day-to-day operation of a hospital."
+    },
+    "attributes" : [ "external" ],
+    "id" : "7",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#Diseases",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Disease is a subclassof  Healthcare.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Diseases",
+      "undefined" : "Diseases"
+    },
+    "subClasses" : [ "11", "12" ],
+    "comment" : {
+      "undefined" : "It is a cause who makes person abnormal."
+    },
+    "id" : "9",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Patient",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Patient is a subclass of Actor.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Patient",
+      "undefined" : "Patient"
+    },
+    "subClasses" : [ "16", "5", "17" ],
+    "comment" : {
+      "undefined" : "A person who needs treatment."
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Sensores",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Sensores is a sub-class of HealthDevices",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Sensores",
+      "undefined" : "Sensores"
+    },
+    "subClasses" : [ "22", "23", "24" ],
+    "comment" : {
+      "undefined" : "Sensors are devices that detect physical, chemical, and biological signals and provide a way for those signals to be measured and recorded."
+    },
+    "attributes" : [ "external" ],
+    "id" : "21",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Pulmonologist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Pulmonologist is a sub-class of Physician",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Pulmonologist",
+      "undefined" : "Pulmonologist"
+    },
+    "comment" : {
+      "undefined" : "Pulmonologists treat breathing disorders, and may also specialize in some treatment of sleep disorders, severe allergies, and other lung conditions and diseases."
+    },
+    "attributes" : [ "external" ],
+    "id" : "36",
+    "superClasses" : [ "37" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#BPSensores",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "BPSensores is a sub-class of Sensores",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BPSensores",
+      "undefined" : "BPSensores"
+    },
+    "comment" : {
+      "undefined" : "Sensing and Storing the Blood Pressure Measure by Patients through A Platform and Mobile Devices Sensors"
+    },
+    "attributes" : [ "external" ],
+    "id" : "23",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#InsurancePolicy",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a subclass of Record",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InsurancePolicy",
+      "undefined" : "InsurancePolicy"
+    },
+    "comment" : {
+      "undefined" : "An insurance policy for patients."
+    },
+    "attributes" : [ "external" ],
+    "id" : "57",
+    "superClasses" : [ "58" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Physician",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Physician is  a sub-class of HealthProvider.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Physician",
+      "undefined" : "Physician"
+    },
+    "subClasses" : [ "36", "43", "40" ],
+    "comment" : {
+      "undefined" : "A physician, medical practitioner, medical doctor, or simply doctor, is a professional who practises medicine, which is concerned with promoting, maintaining, or restoring health through the study, diagnosis, prognosis and treatment of disease, injury, and other physical and mental impairments."
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "37",
+    "superClasses" : [ "66" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Surgeon",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a Subclass of Actor",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Surgeon",
+      "undefined" : "Surgeon"
+    },
+    "comment" : {
+      "undefined" : "A person to do surgery of patients."
+    },
+    "attributes" : [ "external" ],
+    "id" : "67",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Cough",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Cough is a sub-class of Sympoms.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Cough",
+      "undefined" : "Cough"
+    },
+    "comment" : {
+      "undefined" : "A rapid expulsion of air from the lungs, typically in order to clear the lung airways of fluids, mucus, or other material. Also known as tussis"
+    },
+    "attributes" : [ "external" ],
+    "id" : "34",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Consultation",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Consultation is a sub-class of Event.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Consultation",
+      "undefined" : "Consultation"
+    },
+    "comment" : {
+      "undefined" : "Consultation is the act of seeking assistance from another physician(s) or health care professional(s) for diagnostic studies, therapeutic interventions, or other services that may benefit the patient."
+    },
+    "attributes" : [ "external" ],
+    "id" : "70",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Hospital",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Hospital is a sub-class of HealthCare",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Hospital",
+      "undefined" : "Hospital"
+    },
+    "comment" : {
+      "undefined" : "A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment."
+    },
+    "attributes" : [ "external" ],
+    "id" : "3",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#TemperatureSensors",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TemperatureSensors",
+      "undefined" : "Temperature Sensors"
+    },
+    "comment" : {
+      "undefined" : "One used to determine the temperature of the patient in clinical situations. a clinical thermometer using a sensor based on thermistors, solid-state electronic devices whose electrical characteristics change with temperature."
+    },
+    "attributes" : [ "external" ],
+    "id" : "22",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Record",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Record is a sub-class of HealthCare.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Record",
+      "undefined" : "Record"
+    },
+    "subClasses" : [ "86", "87", "57" ],
+    "comment" : {
+      "undefined" : "A record of a patient's medical information (as medical history, care or treatments received, test results, diagnoses, and medications taken)"
+    },
+    "attributes" : [ "external" ],
+    "id" : "58",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Radiation_Oncologist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Radiation_Oncologist is a subclass of Oncologist.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Radiation_Oncologist",
+      "undefined" : "Radiation_Oncologist"
+    },
+    "comment" : {
+      "undefined" : "Radiation oncologists are health care professionals who treat cancers and tumors through radiation therapy. Radiation oncologists must be able to handle difficult emotional situations involving cancer patients and their families."
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "40" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Cardiologist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Cardiologist is a sub-class of Physician",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Cardiologist",
+      "undefined" : "Cardiologist"
+    },
+    "comment" : {
+      "undefined" : "A cardiologist is a medical doctor who is trained and certified to help patients who have problems with their heart, blood vessels or other things connected to the cardiovascular system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "43",
+    "superClasses" : [ "37" ]
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#LeverPatient",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a subclass of Patient.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LeverPatient",
+      "undefined" : "LeverPatient"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/def/sanjutiwari#Kan",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Kan"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Tove",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Tove"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Som",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Som"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Rock",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Rock"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A patient suffering from lever problem."
+    },
+    "id" : "16",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Headache",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Headache is a sub-class of symptoms.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Headache",
+      "undefined" : "Headache"
+    },
+    "comment" : {
+      "undefined" : "Headache is pain in any region of the head. Headaches may occur on one or both sides of the head, be isolated to a certain location, radiate across the head from one point, or have a viselike quality."
+    },
+    "attributes" : [ "external" ],
+    "id" : "32",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Treatment",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Treatment is a sub-class of Event.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Treatment",
+      "undefined" : "Treatment"
+    },
+    "comment" : {
+      "undefined" : "Medical treatment means the management and care of a patient to combat disease or disorder."
+    },
+    "attributes" : [ "external" ],
+    "id" : "97",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#HealthDevices",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "HealthDevices is a sub-class",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HealthDevices",
+      "undefined" : "HealthDevices"
+    },
+    "subClasses" : [ "103", "21", "104" ],
+    "comment" : {
+      "undefined" : "A medical device is any device intended to be used for medical purposes. ... Medical devices benefit patients by helping health care providers diagnose and treat patients and helping patients overcome sickness or disease, improving their quality of life."
+    },
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#Doctor",
+    "equivalent" : [ "37" ],
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a Subclass of Actor",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Doctor",
+      "undefined" : "Doctor"
+    },
+    "subClasses" : [ "40" ],
+    "comment" : {
+      "undefined" : "A person for the treatment of Patients."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "85",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#ChestPain",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "ChestPain is a sub-class of Symptoms.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ChestPain",
+      "undefined" : "ChestPain"
+    },
+    "comment" : {
+      "undefined" : "Pain in the chest that can be a result of many things, including angina, heart attack (coronary occlusion), and other important diseases. Chest pain is a warning to seek medical attention, so one should try not to ignore chest pain and 'work through it."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#ClinicalPharmacist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "ClinicalPharmacist is a sub-class of Pharmacist",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ClinicalPharmacist",
+      "undefined" : "ClinicalPharmacist"
+    },
+    "subClasses" : [ "55", "0" ],
+    "comment" : {
+      "undefined" : "Clinical pharmacists work directly with physicians, other health professionals, and patients to ensure that the medications prescribed for patients contribute to the best possible health outcomes."
+    },
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "106" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Fever",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Fever is a sub-class of Symptoms.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Fever",
+      "undefined" : "Fever"
+    },
+    "comment" : {
+      "undefined" : "Although a fever technically is any body temperature above the normal of 98.6 F (37 C), in practice a person is usually not considered to have a significant fever until the temperature is above 100.4 F (38 C)"
+    },
+    "attributes" : [ "external" ],
+    "id" : "28",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#BloodPressure",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "BloodPressure is a subclass of Disease.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BloodPressure",
+      "undefined" : "BloodPressure"
+    },
+    "comment" : {
+      "undefined" : "It is a disease."
+    },
+    "id" : "12",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Oncology_Pharmacist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Oncology_Pharamacist is a sub-class of ClinicalPharmacist",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Oncology_Pharmacist",
+      "undefined" : "Oncology_Pharmacist"
+    },
+    "comment" : {
+      "undefined" : "Oncology pharmacists ensure safety in compounding, preparing, and dispensing chemotherapy. ... Because of their expert knowledge of medications, pharmacists play an important role in educating patients, caregivers, and other health care professionals."
+    },
+    "attributes" : [ "external" ],
+    "id" : "55",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#HeartbeatSensors",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "HeartbeatSensors is a sub-class of Sensores.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HeartbeatSensors",
+      "undefined" : "HeartbeatSensors"
+    },
+    "comment" : {
+      "undefined" : "A heart rate monitor (HRM) is a personal monitoring device that allows one to measure/display ... Medical heart rate monitoring used in hospitals is usually wired and usually multiple sensors are used."
+    },
+    "attributes" : [ "external" ],
+    "id" : "24",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#CommunityPharmacist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "CommunityPharmacist is a sub-cñass of Pharmacist.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CommunityPharmacist",
+      "undefined" : "CommunityPharmacist"
+    },
+    "comment" : {
+      "undefined" : "Community pharmacists are the health professionals most accessible to the public. They supply medicines in accordance with a prescription or, when legally permitted, sell them without a prescription."
+    },
+    "attributes" : [ "external" ],
+    "id" : "110",
+    "superClasses" : [ "106" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Oncologist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Oncologist is a sub-class of Physician.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Oncologist",
+      "undefined" : "Oncologist"
+    },
+    "subClasses" : [ "53", "39" ],
+    "comment" : {
+      "undefined" : "A doctor who has special training in diagnosing and treating cancer in adults using chemotherapy, hormonal therapy, biological therapy, and targeted therapy."
+    },
+    "attributes" : [ "external" ],
+    "id" : "40",
+    "superClasses" : [ "37", "85" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#RFID",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "RFID is a sub-class of HealthDevices.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RFID",
+      "undefined" : "RFID"
+    },
+    "comment" : {
+      "undefined" : "RFID is present in many forms – from tracking of surgical tools to tracking patients and staff."
+    },
+    "attributes" : [ "external" ],
+    "id" : "103",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "122",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#HeartBeat",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "HeartBeat is a sub-class of Symptoms.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HeartBeat",
+      "undefined" : "HeartBeat"
+    },
+    "comment" : {
+      "undefined" : "Heart rate is the speed of the heartbeat measured by the number of contractions (beats) of the heart per minute (bpm). The heart rate can vary according to the body's physical needs, including the need to absorb oxygen and excrete carbon dioxide. ..."
+    },
+    "attributes" : [ "external" ],
+    "id" : "26",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "123",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "113",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "124",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#MedicalRecord",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a subclass of Record",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MedicalRecord",
+      "undefined" : "MedicalRecord"
+    },
+    "comment" : {
+      "undefined" : "A record of Patient and Staff"
+    },
+    "attributes" : [ "external" ],
+    "id" : "86",
+    "superClasses" : [ "58" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Medical_Oncologist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Medical_Oncologist is a sub-class of Oncologist",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Medical_Oncologist",
+      "undefined" : "Medical_Oncologist"
+    },
+    "comment" : {
+      "undefined" : "A medical oncologist often is the main health care provider for someone who has cancer."
+    },
+    "attributes" : [ "external" ],
+    "id" : "53",
+    "superClasses" : [ "40" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Sympotoms",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Symptoms is a sub-class of Event.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Sympotoms",
+      "undefined" : "Symptoms"
+    },
+    "subClasses" : [ "30", "28", "34", "32", "26", "19" ],
+    "comment" : {
+      "undefined" : "A symptom is a departure from normal function or feeling which is apparent to a patient, reflecting the presence of an unusual state, or of a disease. A symptom can be subjective or objective."
+    },
+    "attributes" : [ "external" ],
+    "id" : "20",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Organization",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Organization is a subclass of health care.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Organization",
+      "undefined" : "Organization"
+    },
+    "subClasses" : [ "3", "101", "99" ],
+    "comment" : {
+      "undefined" : "A health system, also sometimes referred to as health care system or healthcare organization, is the organization of people, institutions, and resources that deliver health care services to meet the health needs of target populations."
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Body_Temp",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Body_Temp is a sub-class of Symptoms.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Body_Temp",
+      "undefined" : "Body_Temp"
+    },
+    "comment" : {
+      "undefined" : "Temperature of the body; normally 98.6 F or 37 C in humans; usually measured to obtain a quick evaluation of a person's health"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#GeneralPractice",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Organization is a sub-class of HealthCare",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "GeneralPractice",
+      "undefined" : "GeneralPractice"
+    },
+    "comment" : {
+      "undefined" : "General practice (GP) General practitioners (GPs) treat all common medical conditions and refer patients to hospitals and other medical services for urgent and specialist treatment."
+    },
+    "attributes" : [ "external" ],
+    "id" : "101",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Manager",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a Subclass of Actor",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Manager",
+      "undefined" : "Manager"
+    },
+    "comment" : {
+      "undefined" : "To manage the things."
+    },
+    "attributes" : [ "external" ],
+    "id" : "94",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#DoctorsPrescription",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is a subclass of Record",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DoctorsPrescription",
+      "undefined" : "DoctorsPrescription"
+    },
+    "comment" : {
+      "undefined" : "It is prescription suggested to patient."
+    },
+    "attributes" : [ "external" ],
+    "id" : "87",
+    "superClasses" : [ "58" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Diagnosis",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Diagnosis is sub-class of Event.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Diagnosis",
+      "undefined" : "Diagnosis"
+    },
+    "comment" : {
+      "undefined" : "Medical diagnosis is the process of determining which disease or condition explains a person's symptoms and signs."
+    },
+    "attributes" : [ "external" ],
+    "id" : "77",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Actor",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Actor is  subclass of health care.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Actor",
+      "undefined" : "Actor"
+    },
+    "subClasses" : [ "6", "67", "94", "47", "85", "66", "7" ],
+    "comment" : {
+      "undefined" : "Actor can perform a concrete intervention or problem assessment such as Doctor, Manager, Nurse, Patient, Surgeon etc,"
+    },
+    "attributes" : [ "external" ],
+    "id" : "8",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Surgery",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Surgery is a sub-class of Event",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Surgery",
+      "undefined" : "Surgery"
+    },
+    "comment" : {
+      "undefined" : "The branch of medicine that employs operations in the treatment of disease or injury. Surgery can involve cutting, abrading, suturing, or otherwise physically changing body tissues and organs."
+    },
+    "attributes" : [ "external" ],
+    "id" : "72",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Actuators",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Actuators is a sub-class of healthDevices",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Actuators",
+      "undefined" : "Actuators"
+    },
+    "comment" : {
+      "undefined" : "An actuator is a device that converts energy into motion or applies force. The mechanical device takes energy in the form of hydraulics, pneumatics, or from a motor, and converts it into motion."
+    },
+    "attributes" : [ "external" ],
+    "id" : "104",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#KidneyPatient",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "KidneyPatient is a subclass of Patient.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "KidneyPatient",
+      "undefined" : "KidneyPatient"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/def/sanjutiwari#John",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "John"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Bon",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Bon"
+      }
+    }, {
+      "iri" : "https://w3id.org/def/sanjutiwari#Sam",
+      "baseIri" : "https://w3id.org/def/sanjutiwari",
+      "labels" : {
+        "IRI-based" : "Sam"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A patient suffering from Kidney problems."
+    },
+    "id" : "17",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#HealthCare",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "HealthCare is a main class to keep Health Information.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HealthCare",
+      "undefined" : "HealthCare"
+    },
+    "subClasses" : [ "65", "58", "9", "8", "4" ],
+    "comment" : {
+      "undefined" : "A class for health care objects."
+    },
+    "attributes" : [ "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#HeartDisease",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "HeartDisease is a subclass of Disease.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HeartDisease",
+      "undefined" : "HeartDisease"
+    },
+    "comment" : {
+      "undefined" : "It is a disease."
+    },
+    "id" : "11",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Event",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Event is a subclass of Health care.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Event",
+      "undefined" : "Event"
+    },
+    "subClasses" : [ "70", "77", "20", "72", "69", "97" ],
+    "comment" : {
+      "undefined" : "Event is a consequence of  care that results several kind of physical states."
+    },
+    "attributes" : [ "external" ],
+    "id" : "65",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Nurse",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Subclass of Actor",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Nurse",
+      "undefined" : "Nurse"
+    },
+    "comment" : {
+      "undefined" : "Nurse is for caring the people."
+    },
+    "attributes" : [ "external" ],
+    "id" : "47",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#HealthProvider",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HealthProvider",
+      "undefined" : "HealthProvider"
+    },
+    "subClasses" : [ "37", "106" ],
+    "comment" : {
+      "undefined" : "Person or business that provides health care services to consumers. Most health care providers are part of a network of some sort whether it is a HMO or PPO."
+    },
+    "attributes" : [ "external" ],
+    "id" : "66",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Insurance",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Insurance is a sub-class of Organization",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Insurance",
+      "undefined" : "Insurance"
+    },
+    "comment" : {
+      "undefined" : "Health insurance is a type of insurance coverage that pays for medical and surgical expenses incurred by the insured."
+    },
+    "attributes" : [ "external" ],
+    "id" : "99",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Referral",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Referral is a sub-class of Event.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Referral",
+      "undefined" : "Referral"
+    },
+    "comment" : {
+      "undefined" : "A written order from your primary care doctor for you to see a specialist or get certain medical services."
+    },
+    "attributes" : [ "external" ],
+    "id" : "69",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#Pharmacist",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "Pharmacist is a sub-class of HealthProvider.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Pharmacist",
+      "undefined" : "Pharmacist"
+    },
+    "subClasses" : [ "1", "110" ],
+    "comment" : {
+      "undefined" : "The pharmacist verifies the legality, safety and appropriateness of the prescription order, checks the patient medication record before dispensing the prescription, ensures that the quantities of medication are dispensed accurately, and decides whether the medication should be handed to the patient, with appropriate counselling."
+    },
+    "attributes" : [ "external" ],
+    "id" : "106",
+    "superClasses" : [ "66" ]
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "91",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "95",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "96",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "102",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "105",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "107",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "109",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "111",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "115",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "118",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "120",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "121",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "125",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "126",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "108",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "127",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "128",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "129",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "130",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "131",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "132",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "133",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "4",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#hasManufacture",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasManufacture",
+      "undefined" : "hasManufacture"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "13"
+  }, {
+    "range" : "20",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "18"
+  }, {
+    "range" : "20",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "25"
+  }, {
+    "range" : "20",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "27"
+  }, {
+    "range" : "20",
+    "domain" : "30",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "29"
+  }, {
+    "range" : "20",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "31"
+  }, {
+    "range" : "20",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "range" : "37",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "40",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
+  }, {
+    "range" : "37",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "41"
+  }, {
+    "range" : "37",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#hasModel",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "hasModel",
+      "undefined" : "hasModel"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#cared_by",
+    "inverse" : "48",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "47",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "It is an object proprty.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "cared_by",
+      "undefined" : "cared_by"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "Property for Patient"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#managed_by",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "4",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An object property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "managed_by",
+      "undefined" : "managed_by"
+    },
+    "domain" : "10",
+    "comment" : {
+      "undefined" : "An object property to manage the Healthcare"
+    },
+    "attributes" : [ "object" ],
+    "id" : "49"
+  }, {
+    "range" : "21",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "50"
+  }, {
+    "range" : "21",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "51"
+  }, {
+    "range" : "40",
+    "domain" : "53",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "52"
+  }, {
+    "range" : "1",
+    "domain" : "55",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "54"
+  }, {
+    "range" : "6",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "56"
+  }, {
+    "range" : "21",
+    "domain" : "22",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "59"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "60"
+  }, {
+    "range" : "9",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "61"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "62"
+  }, {
+    "range" : "6",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "63"
+  }, {
+    "range" : "65",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "64"
+  }, {
+    "range" : "65",
+    "domain" : "69",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "68"
+  }, {
+    "range" : "65",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "71"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#found_in",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "found_in",
+      "undefined" : "found_in"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "An Object Property for diagnosing the symptoms."
+    },
+    "attributes" : [ "object" ],
+    "id" : "73"
+  }, {
+    "range" : "10",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "74"
+  }, {
+    "range" : "10",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "75"
+  }, {
+    "range" : "65",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "range" : "65",
+    "domain" : "70",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "78"
+  }, {
+    "range" : "10",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "79"
+  }, {
+    "range" : "8",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "80"
+  }, {
+    "range" : "10",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "81"
+  }, {
+    "range" : "10",
+    "domain" : "58",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "82"
+  }, {
+    "range" : "8",
+    "domain" : "66",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "83"
+  }, {
+    "range" : "8",
+    "domain" : "85",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "84"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#recieved_data",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "14",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property for data receiving.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "recieved_data",
+      "undefined" : "received_data"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "A Property to receive the data from HealthDevices."
+    },
+    "attributes" : [ "object" ],
+    "id" : "88"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#transfer_data_to",
+    "inverse" : "88",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "8",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "transfer_data_to",
+      "undefined" : "transfer_data_to"
+    },
+    "domain" : "14",
+    "comment" : {
+      "undefined" : "Property to transfer data."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "89"
+  }, {
+    "range" : "8",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "90"
+  }, {
+    "range" : "8",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "91"
+  }, {
+    "range" : "58",
+    "domain" : "57",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "92"
+  }, {
+    "range" : "8",
+    "domain" : "94",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "93"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#measured_by",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "21",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "measured_by",
+      "undefined" : "measured_by"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "Property to measure."
+    },
+    "attributes" : [ "object" ],
+    "id" : "95"
+  }, {
+    "range" : "8",
+    "domain" : "67",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "96"
+  }, {
+    "range" : "4",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "98"
+  }, {
+    "range" : "4",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "100"
+  }, {
+    "range" : "58",
+    "domain" : "87",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "102"
+  }, {
+    "range" : "58",
+    "domain" : "86",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "105"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#cares_for",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "cares_for",
+      "undefined" : "cares_for"
+    },
+    "domain" : "47",
+    "comment" : {
+      "undefined" : "A property for Doctors"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#looks_for",
+    "inverse" : "108",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "looks_for",
+      "undefined" : "looks_for"
+    },
+    "domain" : "85",
+    "comment" : {
+      "undefined" : "Propert to look patients"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "107"
+  }, {
+    "range" : "106",
+    "domain" : "110",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "109"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#has_manage",
+    "inverse" : "49",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "10",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An object property",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "has_manage",
+      "undefined" : "has_manage"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "An object property to manage organisation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "111"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#doTest",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "113",
+    "label" : {
+      "IRI-based" : "doTest"
+    },
+    "domain" : "9",
+    "attributes" : [ "datatype" ],
+    "id" : "112"
+  }, {
+    "range" : "14",
+    "domain" : "104",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "114"
+  }, {
+    "range" : "14",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "115"
+  }, {
+    "range" : "106",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "116"
+  }, {
+    "range" : "66",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "117"
+  }, {
+    "range" : "65",
+    "domain" : "97",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "118"
+  }, {
+    "range" : "14",
+    "domain" : "103",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "119"
+  }, {
+    "range" : "66",
+    "domain" : "106",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "120"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#operates_by",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "67",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "operates_by",
+      "undefined" : "operates_by"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "Property to operate by doctor."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "121"
+  }, {
+    "range" : "85",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "125"
+  }, {
+    "range" : "9",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "126"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#treated_by",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "85",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "treated_by",
+      "undefined" : "treated_by"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "Property for treatment."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "108"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#has",
+    "inverse" : "73",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "20",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Objectproperty.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "has",
+      "undefined" : "has"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "Property to contain."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "127"
+  }, {
+    "range" : "14",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "128"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#treated_by",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "43",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "treated_by",
+      "undefined" : "treated_by"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "Property for treatment."
+    },
+    "attributes" : [ "someValues", "external", "object" ],
+    "id" : "129"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#hasAddress",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "122",
+    "label" : {
+      "IRI-based" : "hasAddress",
+      "undefined" : "hasAddress"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "130"
+  }, {
+    "iri" : "https://w3id.org/def/SmartHealthCare#operates",
+    "inverse" : "121",
+    "baseIri" : "https://w3id.org/def/SmartHealthCare",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "operates",
+      "undefined" : "operates"
+    },
+    "domain" : "67",
+    "comment" : {
+      "undefined" : "Property for operator."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "131"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#has_measured",
+    "inverse" : "95",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "9",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "An Object Property",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "has_measured",
+      "undefined" : "has_measured"
+    },
+    "domain" : "21",
+    "comment" : {
+      "undefined" : "An object property to measure the diseases by sensor."
+    },
+    "attributes" : [ "object" ],
+    "id" : "132"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#hasName",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "123",
+    "label" : {
+      "IRI-based" : "hasName",
+      "undefined" : "hasName"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype" ],
+    "id" : "133"
+  }, {
+    "iri" : "https://w3id.org/def/sanjutiwari#hasSymptoms",
+    "baseIri" : "https://w3id.org/def/sanjutiwari",
+    "range" : "124",
+    "label" : {
+      "IRI-based" : "hasSymptoms"
+    },
+    "domain" : "9",
+    "attributes" : [ "datatype" ],
+    "id" : "134"
+  } ]
+}
